@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "401effa7-d8c0-4474-8de2-89f7f6368d65",
+		"name": "Agenda API requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserção de vários contatos",
+			"item": [
+				{
+					"name": "popular contatos para teste",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"nome\": \"Silas Fernandes da Cunha\",\r\n        \"email\": \"silascunha09@hotmail.com\",\r\n        \"telefone\": \"27996555895\"\r\n    },\r\n    {\r\n        \"nome\": \"Contato 2\",\r\n        \"email\": \"email2@outlook.com\",\r\n        \"telefone\": \"27992222222\"\r\n    },\r\n    {\r\n        \"nome\": \"Contato 3\",\r\n        \"email\": \"email3@gmail.com\",\r\n        \"telefone\": \"27993333333\"\r\n    },\r\n    {\r\n        \"nome\": \"Contato 4\",\r\n        \"email\": \"email4@hotmail.com\",\r\n        \"telefone\": \"27994444444\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contatos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get todos os contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/contatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar contato por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/contatos/idDoContatoAqui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos",
+						"idDoContatoAqui"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar contatos por filtro (pesquisa)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/contatos?filtro=silas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos"
+					],
+					"query": [
+						{
+							"key": "filtro",
+							"value": "silas",
+							"description": "Pode ser parte do nome, email, ou telefone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir um contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Contato de Exemplo\",\r\n    \"email\": \"email@exemplo.com\",\r\n    \"telefone\": \"27991919191\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/contatos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar um contato por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Nome a Atualizar\",\r\n    \"email\": \"email.a.atualizar@exemplo.com\",\r\n    \"telefone\": \"27990000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/contatos/idDoContatoAqui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos",
+						"idDoContatoAqui"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover um contato por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/contatos/idDoContatoAqui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos",
+						"idDoContatoAqui"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
